@@ -1,3 +1,11 @@
 *.class
 
 target/
+
+/bin/
+
+.project
+
+.classpath
+
+/.settings/
