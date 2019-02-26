@@ -8,6 +8,9 @@ import java.util.stream.Collectors;
 
 public class Study {
 
+    /**
+     * 演習で使用する数字のリスト。
+     */
     private static final List<Integer> NUMBERS = Arrays.asList(new Integer[]{1, 12, 3, 3, 4, 6, 2});
 
     /**
@@ -24,10 +27,12 @@ public class Study {
 
     /**
      * 演習用のメソッド(java8)
+     * <p>
+     * 与えた整数から、偶数だけを抜き出し、昇順に並び替える。
      */
     public static List<Integer> onlyEvenAndSortByJava8() {
 
-        //与えた整数から、偶数だけを抜き出し、昇順に並び替え、標準出力
+        //streamを使って、与えた整数から、偶数だけを抜き出し、昇順に並び替える
         return NUMBERS.stream()
                     .filter(each -> each % 2 == 0)
                     .sorted().collect(Collectors.toList());
@@ -36,15 +41,19 @@ public class Study {
 
     /**
      * 演習用のメソッド(java7)
+     * <p>
+     * 与えた整数から、偶数だけを抜き出し、昇順に並び替える。
      */
     public static List<Integer> onlyEvenAndSortByJava7() {
 
         List<Integer> even = new ArrayList<Integer>();
+        //2で割ったあまりが0の数字を格納
         for (Integer num : NUMBERS) {
             if (num % 2 == 0) {
                 even.add(num);
             }
         }
+        //昇順にソート
         Collections.sort(even);
 
         return even;
