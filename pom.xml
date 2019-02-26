@@ -9,5 +9,25 @@
   		<artifactId>commons-lang3</artifactId>
   		<version>3.0</version>
   	</dependency>
+  	<dependency>
+  		<groupId>com.goldmansachs</groupId>
+  		<artifactId>gs-collections-api</artifactId>
+  		<version>7.0.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.goldmansachs</groupId>
+  		<artifactId>gs-collections</artifactId>
+  		<version>7.0.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.goldmansachs</groupId>
+  		<artifactId>gs-collections-testutils</artifactId>
+  		<version>7.0.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.goldmansachs</groupId>
+  		<artifactId>gs-collections-forkjoin</artifactId>
+  		<version>7.0.0</version>
+  	</dependency>
   </dependencies>
 </project>
