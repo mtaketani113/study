@@ -6,6 +6,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.gs.collections.api.list.MutableList;
+import com.gs.collections.impl.list.mutable.FastList;
+
 /**
  * 演習用のクラス
  */
@@ -24,6 +27,9 @@ public class Study {
         System.out.println("Java8の結果");
         onlyEvenAndSortByJava8().forEach(System.out::println);
 
+        System.out.println("Java8の結果(withGSCollectors");
+        onlyEvenAndSortByJava8WithGSCollectors().forEach(System.out::println);
+
         System.out.println("Java7の結果");
         onlyEvenAndSortByJava7().forEach(System.out::println);
     }
@@ -39,6 +45,22 @@ public class Study {
         return NUMBERS.stream()
                     .filter(each -> each % 2 == 0)
                     .sorted().collect(Collectors.toList());
+    }
+
+    /**
+     * 演習用のメソッド(java8 with GS Collectionsライブラリ)
+     * <p>
+     * 与えた整数から、偶数だけを抜き出し、昇順に並び替える。
+     */
+    public static List<String> onlyEvenAndSortByJava8WithGSCollectors() {
+
+        MutableList<Integer> numbers = FastList.newList(NUMBERS);
+
+        //数字が何番目かを追記して返却。
+        return  numbers.select(each -> each % 2 == 0)
+                        .toSortedListBy(each -> each)
+                        .zipWithIndex()
+                        .collect(pair -> pair.getTwo() + "番目は" + pair.getOne());
     }
 
     /**
