@@ -6,6 +6,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * 演習用のクラス
+ */
 public class Study {
 
     /**
@@ -37,7 +40,6 @@ public class Study {
                     .filter(each -> each % 2 == 0)
                     .sorted().collect(Collectors.toList());
     }
-
 
     /**
      * 演習用のメソッド(java7)
